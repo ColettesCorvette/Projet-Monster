@@ -4,7 +4,8 @@ var nom;
 var life, money; 
 var awake = true;
 
-var run, fight, work, sleep, eat, show, newLife, kill;
+var run, fight, work, sleep, eat, newLife, kill;
+var show = document.getElementById("b6");
 
 function init(n, l, m)
 {
@@ -20,7 +21,16 @@ function showMe()
 }
 
 
+function go()
+{
+    init("John Doe", 100, 1e6);
+    
+    show.addEventListener('click', event => {
+            showMe();
+    });
+    
+}
 
-init("John Doe", 100, 1e6);
 
-showMe();
+
+go();
