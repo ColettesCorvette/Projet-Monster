@@ -25,8 +25,8 @@ function init(n, l, m)
 
 
 function showMe()
-{
-    alert(`nom : ${nom}\n life : ${life}\n money : $${money}\n`);
+{   
+    log(`nom : ${nom}\n life : ${life}\n money : $${money}\n`);
 }
 
 
@@ -56,6 +56,5 @@ function displayStatus(life, money, awake)
 
 
 window.onload = go();
-window.onload = log("ok");
 window.onload = displayStatus(life, money, awake);
 
