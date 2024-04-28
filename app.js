@@ -13,6 +13,9 @@ var sleep = document.getElementById("b4");
 var eat = document.getElementById("b5");
 var show = document.getElementById("b6");
 
+var actionbox = document.getElementById("actionbox");
+
+
 function init(n, l, m)
 {
     nom = n; 
@@ -39,9 +42,20 @@ function go()
 }
 
 function log(message)
-{
+{   
+    var nouveauMessage = document.createElement("p");
+    nouveauMessage.textContent = message;
+    actionbox.insertBefore(nouveauMessage, actionbox.firstChild);
+}
 
+function displayStatus(life, money, awake)
+{   
+    var status = document.getElementById("status");
+    status.innerHTML = `Life : ${life}\n Money : $${money}\n Awake : ${awake}`;
 }
 
 
 window.onload = go();
+window.onload = log("ok");
+window.onload = displayStatus(life, money, awake);
+
