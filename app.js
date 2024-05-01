@@ -148,15 +148,25 @@ function hasard()
 
 function newLife()
 {   
-    if(life = 0)
-    life++;
-    log("NEW LIFE - Le monstre est ressuscite");
-    displayStatus(life, money, awake);
+    if (life === 0)
+    {
+        life++;
+        log("NEW LIFE - Le monstre est ressuscite");
+        displayStatus(life, money, awake);
+    }
+    else
+        log("NEW LIFE - impossible car le monstre est deja vivant");
 }
 
 function kill()
-{
-    life = 0;
+{   
+    if (life > 0) {
+        life = 0;
+        log("KILL - Le monstre est mort");
+        displayStatus(life, money, awake);
+    }
+    else
+        log("KILL - impossible car le monstre est deja mort");
 }
 
 
