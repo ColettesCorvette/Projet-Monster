@@ -4,6 +4,7 @@ var nom;
 var life, money; 
 var awake = true;
 
+
 var NewLife = document.getElementById("b1");
 var Kill = document.getElementById("k");
 var Run = document.getElementById("b2");
@@ -34,7 +35,7 @@ function showMe()
 function go()
 {
 
-    init("John Doe", 10, 10);
+    init("John Doe", 100, 100);
 
     show.addEventListener('click', event => {
         showMe();
@@ -52,7 +53,17 @@ function log(message)
 function displayStatus(life, money, awake)
 {   
     var status = document.getElementById("status");
+    var monsterStyle = document.getElementById("monster");
+    var borderWidth;
+
     status.innerHTML = `Life : ${life}\n Money : ${money}\n Awake : ${awake}`;
+
+    life < 5 ? monsterStyle.style.backgroundColor = "red" : life < 10 ? monsterStyle.style.backgroundColor = "orange" :
+    life < 15 ? monsterStyle.style.backgroundColor = "blue" : life > 20 ? monsterStyle.style.backgroundColor = "green" :null;
+
+    money < 5 ? borderWidth = "1px" : money < 10 ? borderWidth = "3px" : money < 20 ? borderWidth = "5px" : borderWidth = "7px";
+    monster.style.border = `${borderWidth} solid black`;
+
 }
 
 function run()
@@ -67,8 +78,6 @@ function run()
         log("RUN - impossible car le monstre est mort");
     else
         log("RUN - impossible car le monstre dort");
-   
-        
 }
 
 function fight()
