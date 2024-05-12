@@ -167,17 +167,21 @@ function eat()
  */
 function sleep()
 {
-    if(awake)
+    if(awake && life > 0)
     {
         awake = false;
         log("SLEEP - Le monstre dort");
         displayStatus(life, money, awake);
-        setTimeout(function(){
+        setTimeout(function () {
             awake = true;
             life++;
             log("SLEEP - Le monstre se reveille et gagne 1 pt de vie");
             displayStatus(life, money, awake);
         }, 7000);
+    }
+    else if (life === 0)
+    { 
+        log("SLEEP - impossible car le monstre est mort");
     }
     else
         log("SLEEP - impossible car le monstre dort deja");
